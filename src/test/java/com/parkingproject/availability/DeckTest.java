@@ -1,14 +1,13 @@
 package com.parkingproject.availability;
 
+import com.parkingproject.availability.objects.deck;
+import com.parkingproject.availability.repositories.DeckRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import static org.junit.Assert.*;
 
 
 @SpringBootTest

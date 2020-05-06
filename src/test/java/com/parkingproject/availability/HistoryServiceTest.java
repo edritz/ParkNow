@@ -1,9 +1,12 @@
 package com.parkingproject.availability;
 
+import com.parkingproject.availability.exceptions.deckNotFoundException;
+import com.parkingproject.availability.objects.deck;
+import com.parkingproject.availability.repositories.DeckRepository;
+import com.parkingproject.availability.services.HistoryService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,13 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class HistoryControllerTest
+public class HistoryServiceTest
 {
     @Autowired
-    private HistoryController historyController;
+    private HistoryService historyService;
 
     @MockBean
-    private deckHistoryRepository deckHistoryRepository;
+    private com.parkingproject.availability.repositories.deckHistoryRepository deckHistoryRepository;
 
     @MockBean
     DeckRepository deckRepository;
@@ -43,17 +46,17 @@ public class HistoryControllerTest
     public void addHistory() throws Exception
     {
         Mockito.when(deckRepository.findById(1)).thenReturn(java.util.Optional.of(testDeck));
-        assertEquals("Saved" , historyController.addHistory(1, 1, 1));
+        assertEquals("Saved" , historyService.addHistory(1, 1, 1));
     }
 
     @Test(expected = deckNotFoundException.class)
     public void deckDoesntExist() throws Exception
     {
         Mockito.when(deckRepository.findById(1)).thenReturn(java.util.Optional.of(testDeck));
-        assertEquals("Saved" , historyController.addHistory(12, 1, 1));
+        assertEquals("Saved" , historyService.addHistory(12, 1, 1));
 
         Exception exception = assertThrows(RuntimeException.class, () -> {
-            historyController.addHistory(12, 1, 1);
+            historyService.addHistory(12, 1, 1);
         });
         assertEquals("Could not find deck: 12", exception.getMessage());
     }

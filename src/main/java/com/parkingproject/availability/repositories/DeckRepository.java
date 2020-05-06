@@ -1,5 +1,6 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.repositories;
 
+import com.parkingproject.availability.objects.deck;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

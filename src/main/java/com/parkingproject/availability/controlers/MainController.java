@@ -1,12 +1,13 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.controlers;
 
+import com.parkingproject.availability.repositories.DeckRepository;
+import com.parkingproject.availability.objects.deck;
+import com.parkingproject.availability.exceptions.deckNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -50,7 +51,7 @@ public class MainController
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<deck> getAllDecks()
     {
-        // This returns a JSON or XML with the users
+        // This returns a JSON or XML with the decks
         return deckRepository.findAll();
     }
 }

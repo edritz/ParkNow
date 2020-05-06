@@ -1,5 +1,9 @@
 package com.parkingproject.availability;
 
+import com.parkingproject.availability.exceptions.deckNotFoundException;
+import com.parkingproject.availability.objects.deck;
+import com.parkingproject.availability.repositories.DeckRepository;
+import com.parkingproject.availability.services.deckUpdate;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 
 @SpringBootTest

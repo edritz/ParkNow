@@ -1,4 +1,4 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.objects;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

@@ -1,5 +1,6 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.repositories;
 
+import com.parkingproject.availability.objects.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

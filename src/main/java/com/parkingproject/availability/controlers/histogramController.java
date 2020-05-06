@@ -1,7 +1,9 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.controlers;
 
+import com.parkingproject.availability.objects.Hour;
+import com.parkingproject.availability.objects.deckHistory;
+import com.parkingproject.availability.repositories.deckHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -16,7 +18,6 @@ public class histogramController
 {
     @Autowired
     private deckHistoryRepository deckHistoryRepository;
-
 
     @GetMapping(path = "/{id}")
     public @ResponseBody

@@ -1,4 +1,4 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

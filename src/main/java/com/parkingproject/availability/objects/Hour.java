@@ -1,4 +1,4 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.objects;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ public class Hour
 
     private Integer average;
 
-    Hour(Integer hour, Integer average)
+    public Hour(Integer hour, Integer average)
     {
         this.hour = hour;
         this.average = average;

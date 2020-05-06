@@ -1,8 +1,8 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.exceptions;
 
 public class deckNotFoundException extends RuntimeException
 {
-    deckNotFoundException(int id)
+    public deckNotFoundException(int id)
     {
         super("Could not find deck: " + id);
     }

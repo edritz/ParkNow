@@ -1,4 +1,4 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.objects;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

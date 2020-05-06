@@ -1,16 +1,18 @@
-package com.parkingproject.availability;
+package com.parkingproject.availability.services;
 
+import com.parkingproject.availability.exceptions.deckNotFoundException;
+import com.parkingproject.availability.objects.deck;
+import com.parkingproject.availability.objects.deckHistory;
+import com.parkingproject.availability.repositories.DeckRepository;
+import com.parkingproject.availability.repositories.deckHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.*;
 
-@Component
-public class HistoryController
+@Service
+public class HistoryService
 {
     @Autowired
     private deckHistoryRepository deckHistoryRepository;

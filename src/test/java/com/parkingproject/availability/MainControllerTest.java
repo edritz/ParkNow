@@ -1,5 +1,9 @@
 package com.parkingproject.availability;
 
+import com.parkingproject.availability.controlers.MainController;
+import com.parkingproject.availability.exceptions.deckNotFoundAdvice;
+import com.parkingproject.availability.objects.deck;
+import com.parkingproject.availability.repositories.DeckRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +17,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import java.util.List;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 

@@ -1,5 +1,9 @@
 package com.parkingproject.availability;
 
+import com.parkingproject.availability.exceptions.deckNotFoundAdvice;
+import com.parkingproject.availability.objects.Hour;
+import com.parkingproject.availability.objects.deckHistory;
+import com.parkingproject.availability.repositories.DeckRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +20,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 
-import static java.lang.Math.random;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 
@@ -25,13 +28,13 @@ import static org.mockito.ArgumentMatchers.any;
 public class histogramControllerTest
 {
     @Autowired
-    private histogramController histogramController;
+    private com.parkingproject.availability.controlers.histogramController histogramController;
 
     @MockBean
     DeckRepository deckRepository;
 
     @MockBean
-    deckHistoryRepository deckHistoryRepository;
+    com.parkingproject.availability.repositories.deckHistoryRepository deckHistoryRepository;
 
     private MockMvc mockMvc;
 
